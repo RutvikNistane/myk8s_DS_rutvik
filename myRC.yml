@@ -1,18 +1,20 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: mynginx-rc
+  name: myJavaApp-rc
 spec:
   replicas: 2
   selector:
-    app: mynginx
+    app: myJavaApp
+    version: 2.6.1
   template:
     metadata:
       labels:
-        app: mynginx
+        app: myJavaApp
+        version: 2.6.1
     spec:
       containers:
-      - name: mynginxcontainer
-        image: nginx
+      - name: myJavaAppcontainer
+        image: rutviknistane/myonlinebooking:1
         ports:
-        - containerPort: 80      
+        - containerPort: 8080    
