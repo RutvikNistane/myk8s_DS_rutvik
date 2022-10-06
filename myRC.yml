@@ -1,20 +1,20 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: myJavaApp-rc
+  name: myjavaapp-rc
 spec:
   replicas: 2
   selector:
-    app: myJavaApp
+    app: myjavaapp
     version: 2.6.1
   template:
     metadata:
       labels:
-        app: myJavaApp
+        app: myjavaapp
         version: 2.6.1
     spec:
       containers:
-      - name: myJavaAppcontainer
+      - name: myjavaappcontainer
         image: rutviknistane/myonlinebooking:1
         ports:
         - containerPort: 8080    
